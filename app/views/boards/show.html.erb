@@ -22,7 +22,7 @@
 	<div  style = "background: #F2F2F2">
 	<hr>
 	<%= form_for @comment, url: board_comments_path(@board, @comment) do |f| %>
-	名前: <%= f.text_field :name %><br>
+	名前: <%= f.text_field :name ,value: "Noname"%><br>
 	コメント: <%= f.text_area :content %>
 		<% if @comment.errors.any? %>
 			<%= @comment.errors.messages[:title][0] %>
