@@ -1,0 +1,13 @@
+<h1 style="color :#6E6E6E">Rikushiru 掲示板</h1>
+
+<p><%= link_to "スレッド新規作成", new_board_path %></p>
+
+<hr>
+	<ul>
+		<% @boards.each do |board|%>
+		<li>
+			<%= link_to board.title,board_path(board)%>
+		</li>
+		<% end %>
+	</ul>
+</hr>

@@ -1,0 +1,19 @@
+<p><%= link_to "<<スレッド一覧に戻る",boards_path%></p>
+
+<hr>
+<h1 style="color :#6E6E6E">スレッド新規作成</h1>
+<p>
+ <%= form_for @board do |f| %>
+  タイトル: <%= f.text_field :title %> <br>
+  作成者名: <%= f.text_field :editor %> <br>
+		<% if @board.errors.any? %>
+			<%= @board.errors.messages[:title][0] %>
+		<%end%>
+		<% if @board.errors.any? %>
+			<%= @board.errors.messages[:editor][0]%>
+		<%end%>
+</p>
+<p>
+	<%= f.submit "作成"%>
+</p>
+<% end %>
